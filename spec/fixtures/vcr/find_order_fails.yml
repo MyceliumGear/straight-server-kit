@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://gear.loc/gateways/c2809c9fd3465529d2946fb8299450b4f46b24fc40f0e3a641e7e19cd75a3adb/orders/meah
+    uri: http://gear.loc/gateways/a55c73f90728ea2750c0d92151e14f960a4cee1e3bca0cf2da8312573a98a8c5/orders/meah
     body:
       encoding: US-ASCII
       string: ''
@@ -11,6 +11,10 @@ http_interactions:
       - application/json
       User-Agent:
       - Faraday v0.9.1
+      X-Nonce:
+      - '1435134015890302697472'
+      X-Signature:
+      - b42hKPlUp5/+IjnqBVX+BOGQ1Kbl6QlqJkqUCwZYyx7LuFMxg9TrxcnizXJckoZBdX9LEySgJ1BWxCYFU4pOhw==
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -23,15 +27,15 @@ http_interactions:
       Server:
       - nginx/1.9.1
       Date:
-      - Wed, 10 Jun 2015 13:37:14 GMT
+      - Wed, 24 Jun 2015 08:20:15 GMT
       Content-Length:
       - '100'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: GET /gateways/c2809c9fd3465529d2946fb8299450b4f46b24fc40f0e3a641e7e19cd75a3adb/orders/meah
+      string: GET /gateways/a55c73f90728ea2750c0d92151e14f960a4cee1e3bca0cf2da8312573a98a8c5/orders/meah
         Not found
     http_version: 
-  recorded_at: Wed, 10 Jun 2015 13:37:14 GMT
+  recorded_at: Wed, 24 Jun 2015 08:20:15 GMT
 recorded_with: VCR 2.9.3

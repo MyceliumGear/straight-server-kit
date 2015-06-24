@@ -1,12 +1,14 @@
 require 'spec_helper'
 
 RSpec.describe StraightServerKit do
-  it "validates callback signature" do
-    secret    = 'secret'
-    signature = described_class.sign(content: 1, secret: secret)
-    expect(described_class.valid_callback?({}, secret)).to eq false
-    expect(described_class.valid_callback?({signature: 'asdf'}, secret)).to eq false
-    expect(described_class.valid_callback?({order_id: 1}, secret)).to eq false
-    expect(described_class.valid_callback?({order_id: 1, signature: signature}, secret)).to eq true
+  it "validates signature" do
+    secret      = 'secret'
+    request_uri = '/callback/path?order_id=1&callback_data=test'
+    signature   = described_class.signature(nonce: nil, body: nil, method: 'GET', request_uri: request_uri, secret: secret)
+    expect(described_class.valid_callback?(signature: nil, request_uri: request_uri, secret: nil)).to eq false
+    expect(described_class.valid_callback?(signature: nil, request_uri: request_uri, secret: secret)).to eq false
+    expect(described_class.valid_callback?(signature: signature, request_uri: request_uri, secret: nil)).to eq false
+    expect(described_class.valid_callback?(signature: signature, request_uri: request_uri, secret: secret)).to eq true
+    expect(described_class.valid_signature?(signature: signature, request_uri: request_uri, secret: secret, nonce: nil, body: nil, method: 'GET')).to eq true
   end
 end

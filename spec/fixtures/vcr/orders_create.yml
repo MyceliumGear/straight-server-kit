@@ -2,15 +2,19 @@
 http_interactions:
 - request:
     method: post
-    uri: http://gear.loc/gateways/c2809c9fd3465529d2946fb8299450b4f46b24fc40f0e3a641e7e19cd75a3adb/orders
+    uri: http://gear.loc/gateways/a55c73f90728ea2750c0d92151e14f960a4cee1e3bca0cf2da8312573a98a8c5/orders
     body:
       encoding: UTF-8
-      string: '{"amount":"0.1E-1","callback_data":"123","keychain_id":1,"signature":"1d295e79be14197cea096afbcd898267aebaa93d6e6973227132ff35d5f64147"}'
+      string: '{"amount":"0.1E1","callback_data":"123","keychain_id":1}'
     headers:
       Content-Type:
       - application/json
       User-Agent:
       - Faraday v0.9.1
+      X-Nonce:
+      - '1435134015216702717952'
+      X-Signature:
+      - 5R+Xy+1GCQckZDiqThmqDbSOQJhkMT7DTDZaw+m4IsC4YafSNbb1il9Hv/rvgXZtY9Rj06l3iCzJUB62PIZJNA==
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -23,14 +27,14 @@ http_interactions:
       Server:
       - nginx/1.9.1
       Date:
-      - Wed, 10 Jun 2015 11:54:27 GMT
+      - Wed, 24 Jun 2015 08:20:15 GMT
       Content-Length:
-      - '238'
+      - '264'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"status":0,"amount":4382,"address":"1EvNEJtVFuoGdGRMSKsDALxaZy5q66B2qq","tid":null,"id":15,"payment_id":"5d010bd6d45ec67ccd8d3c63dfdf038bd6310f89ed2b657d42b1831e551bc2fe","amount_in_btc":"0.00004382","keychain_id":1,"last_keychain_id":1}'
+      string: '{"status":0,"amount":398740,"address":"1Q8gGSuqyQk2rZeLKiPJz2nrSieTn3VrTy","tid":null,"id":5,"payment_id":"9eff7da15d0fb91ac5bd690fb2a5f7b465aa7fdfbe747028dd1579c8a9b36dba","amount_in_btc":"0.0039874","amount_paid_in_btc":"0.","keychain_id":1,"last_keychain_id":1}'
     http_version: 
-  recorded_at: Wed, 10 Jun 2015 11:54:27 GMT
+  recorded_at: Wed, 24 Jun 2015 08:20:15 GMT
 recorded_with: VCR 2.9.3

@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://gear.loc/gateways/a55c73f90728ea2750c0d92151e14f960a4cee1e3bca0cf2da8312573a98a8c5/orders/9eff7da15d0fb91ac5bd690fb2a5f7b465aa7fdfbe747028dd1579c8a9b36dba/cancel
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.1
+      X-Nonce:
+      - '1435134015939447357440'
+      X-Signature:
+      - 7AMxBVTiH9e2GF0mWnIwHai8Pg+d5W3wlNc+GOmiIAZ4EazaWSo3T9Kzi1389Zfy8BjVP0Iy/h/WBO7GwcMaDQ==
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.1
+      Date:
+      - Wed, 24 Jun 2015 08:20:16 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 24 Jun 2015 08:20:16 GMT
+recorded_with: VCR 2.9.3
