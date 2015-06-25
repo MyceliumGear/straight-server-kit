@@ -10,10 +10,17 @@ namespace :doc do
         next
       end
 
-      puts "## #{klass.name.demodulize.underscore.humanize}"
+      if klass == StraightServerKit::OrderResource
+        klass = klass.for_gateway(1)
+        klass_name = 'StraightServerKit::OrderResource'
+      else
+        klass_name = klass.name
+      end
+
+      puts "## #{klass_name.demodulize.underscore.humanize}"
       puts
-      puts "    client = StraightServerKit::Client.new"
-      puts "    client.#{key} #=> #{klass.name}"
+      puts "    client = StraightServerKit::Client.new(gateway_id: 1, secret: 'secret')"
+      puts "    client.#{key} #=> #{klass_name}"
       puts
       puts "Actions supported: "
       puts
@@ -22,7 +29,7 @@ namespace :doc do
         params         = []
 
         if action.body && action.body.arity > 0
-          params << klass.name.demodulize.underscore.downcase.gsub('_resource', '')
+          params << klass_name.demodulize.underscore.downcase.gsub('_resource', '')
         end
 
         if action_options.any?

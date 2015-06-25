@@ -6,7 +6,9 @@ module StraightServerKit
     end
 
     def self.for_gateway(gateway_id)
-      Class.new self do
+      name = "OrderResource_#{gateway_id}"
+      return StraightServerKit.const_get(name) if StraightServerKit.const_defined?(name)
+      klass = Class.new self do
         resources do
           action :create do
             verb :post
@@ -39,6 +41,7 @@ module StraightServerKit
           end
         end
       end
+      StraightServerKit.const_set name, klass
     end
   end
 end

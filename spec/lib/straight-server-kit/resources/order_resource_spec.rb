@@ -3,6 +3,18 @@ require 'spec_helper'
 RSpec.describe StraightServerKit::OrderResource do
   include_context 'resources'
 
+  it "builds subclass for each gateway" do
+    resources = 3.times.map do |i|
+      resource = StraightServerKit::Client.new(gateway_id: i, secret: nil).orders
+      expect(resource.class.name).to eq "StraightServerKit::OrderResource_#{i}"
+      resource
+    end
+    resources2 = 3.times.map do |i|
+      StraightServerKit::Client.new(gateway_id: i, secret: nil).orders
+    end
+    expect(resources.map(&:class)).to eq resources2.map(&:class)
+  end
+
   describe '#create' do
     it 'creates order' do
       @order = StraightServerKit::Order.new(amount: 1, callback_data: '123', keychain_id: 1)

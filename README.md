@@ -21,27 +21,28 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-client = StraightServerKit::Client.new(url: 'http://gear.loc')
-client = StraightServerKit::Client.new
+client = StraightServerKit::Client.new(gateway_id: 'gateway_id', secret: 'secret', url: 'http://gear.loc')
 ```
 
-### Order resource
+## Order resource
 
+    client = StraightServerKit::Client.new(gateway_id: 1, secret: 'secret')
     client.orders #=> StraightServerKit::OrderResource
 
-Actions supported: 
+Actions supported:
 
-* `client.orders.create(order, gateway_id: 'gateway_id')`
-* `client.orders.find(gateway_id: 'gateway_id', id: 'id')`
+* `client.orders.create(order)`
+* `client.orders.find(id: 'id')`
+* `client.orders.cancel(id: 'id')`
 
-### Order signing
+### Order creation
 
     order = StraightServerKit::Order.new(amount: 0.01, callback_data: '123', keychain_id: 1)
-    order.sign_with 'gateway_secret'
+    client.orders.create(order)
 
 ### Callback validation
 
-    if StraightServerKit.valid_callback?(params, 'gateway_secret')
+    if StraightServerKit.valid_callback?(signature: headers['X-Signature'], request_uri: @env['REQUEST_URI'], secret: gateway_secret)
       # params can be trusted
     end
 
