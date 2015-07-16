@@ -6,7 +6,7 @@ module StraightServerKit
     end
 
     def self.for_gateway(gateway_id)
-      name = "OrderResource_#{gateway_id}"
+      name = "OrderResource_#{gateway_id.to_s.to_sym.object_id}"
       return StraightServerKit.const_get(name) if StraightServerKit.const_defined?(name)
       klass = Class.new self do
         resources do

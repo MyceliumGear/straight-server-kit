@@ -6,7 +6,7 @@ RSpec.describe StraightServerKit::OrderResource do
   it "builds subclass for each gateway" do
     resources = 3.times.map do |i|
       resource = StraightServerKit::Client.new(gateway_id: i, secret: nil).orders
-      expect(resource.class.name).to eq "StraightServerKit::OrderResource_#{i}"
+      expect(resource.class.name).to eq "StraightServerKit::OrderResource_#{i.to_s.to_sym.object_id}"
       resource
     end
     resources2 = 3.times.map do |i|
