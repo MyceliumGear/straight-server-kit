@@ -42,7 +42,7 @@ Actions supported:
 
 ### Callback validation
 
-    if StraightServerKit.valid_callback?(signature: headers['X-Signature'], request_uri: @env['REQUEST_URI'], secret: gateway_secret)
+    if StraightServerKit.valid_callback?(signature: env['HTTP_X_SIGNATURE'], request_uri: (URI(env['REQUEST_URI']).request_uri rescue env['REQUEST_URI']), secret: gateway_secret)
       # params can be trusted
     end
 
