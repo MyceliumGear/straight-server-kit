@@ -1,4 +1,5 @@
 require 'straight-server-kit/version'
+require 'base64'
 require 'resource_kit'
 require 'kartograph'
 require 'openssl'
