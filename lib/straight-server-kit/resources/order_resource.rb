@@ -1,7 +1,7 @@
 module StraightServerKit
   class OrderResource < ResourceKit::Resource
 
-    API_ERROR_HANDLER = lambda do |response|
+    API_ERROR_HANDLER = proc do |response|
       raise ApiError.new(status: response.status, message: response.body)
     end
 
