@@ -12,6 +12,7 @@ module StraightServerKit
     attribute :status, Integer
     attribute :tid, String
     attribute :currency, String
+    attribute :description, String
 
     def pay_path
       "/pay/#{payment_id}" if payment_id
@@ -27,6 +28,7 @@ module StraightServerKit
           property :callback_data
           property :keychain_id
           property :currency
+          property :description
         end
         scoped :created, :found do
           property :address
