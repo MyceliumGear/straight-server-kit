@@ -13,6 +13,8 @@ module StraightServerKit
     attribute :tid, String
     attribute :currency, String
     attribute :description, String
+    attribute :auto_redirect, Boolean
+    attribute :after_payment_redirect_to, String
 
     def pay_path
       "/pay/#{payment_id}" if payment_id
@@ -29,6 +31,8 @@ module StraightServerKit
           property :keychain_id
           property :currency
           property :description
+          property :auto_redirect
+          property :after_payment_redirect_to
         end
         scoped :created, :found do
           property :address
