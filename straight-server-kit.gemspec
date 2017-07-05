@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'virtus', '~> 1.0.5'
   spec.add_dependency 'resource_kit', '~> 0.1.3'
   spec.add_dependency 'kartograph', '~> 0.2.2'
-  spec.add_dependency 'faraday', '~> 0.9.1'
+  spec.add_dependency 'faraday', '~> 0.12.1'
 
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'simplecov'

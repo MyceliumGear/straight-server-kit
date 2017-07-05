@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://gear.loc/gateways/a55c73f90728ea2750c0d92151e14f960a4cee1e3bca0cf2da8312573a98a8c5/orders/9eff7da15d0fb91ac5bd690fb2a5f7b465aa7fdfbe747028dd1579c8a9b36dba/cancel
+    uri: https://gateway.gear.mycelium.com/gateways/73da14f2677eab39fa6e18076f777fde6af5a3f126062419160152b1a2f3ec60/orders/0715a28702298669d4ba87acd2f8c4e045faa671ada675b472ead71d548ba0c0/cancel
     body:
       encoding: UTF-8
       string: ''
@@ -10,11 +10,11 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v0.12.1
       X-Nonce:
-      - '1435134015939447357440'
+      - '1499258633755241218048'
       X-Signature:
-      - 7AMxBVTiH9e2GF0mWnIwHai8Pg+d5W3wlNc+GOmiIAZ4EazaWSo3T9Kzi1389Zfy8BjVP0Iy/h/WBO7GwcMaDQ==
+      - 66z+h5CkD+RlIBpQ54xAy6NCXwiQhfvMOz8K7LERN08Q4gysulS2MUFnG/gAhPwC7eu1ucTCx9xnfV4vFgEYog==
       Content-Length:
       - '0'
       Accept-Encoding:
@@ -23,20 +23,22 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 204
+      message: No Content
     headers:
       Server:
-      - nginx/1.9.1
+      - nginx/1.8.0
       Date:
-      - Wed, 24 Jun 2015 08:20:16 GMT
-      Content-Length:
-      - '0'
+      - Wed, 05 Jul 2017 12:43:54 GMT
+      Content-Type:
+      - text/html
       Connection:
       - keep-alive
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Wed, 24 Jun 2015 08:20:16 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Wed, 05 Jul 2017 12:43:54 GMT
+recorded_with: VCR 3.0.3

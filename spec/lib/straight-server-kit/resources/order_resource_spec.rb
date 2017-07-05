@@ -4,7 +4,7 @@ RSpec.describe StraightServerKit::OrderResource do
   include_context 'resources'
 
   it "builds subclass for each gateway" do
-    resources = 3.times.map do |i|
+    resources  = 3.times.map do |i|
       resource = StraightServerKit::Client.new(gateway_id: i, secret: nil).orders
       expect(resource.class.name).to eq "StraightServerKit::OrderResource_#{i.to_s.to_sym.object_id}"
       resource
@@ -29,16 +29,21 @@ RSpec.describe StraightServerKit::OrderResource do
       end
 
       expect(@created_order.address.to_s).not_to be_empty
-      expect(@created_order.amount > 0).to eq true
+      expect(@created_order.amount).to be > 0
       expect(@created_order.amount).to be_kind_of BigDecimal
-      expect(@created_order.amount_in_btc > 0).to eq true
+      expect(@created_order.amount_in_btc).to be > 0
       expect(@created_order.amount_in_btc).to be_kind_of BigDecimal
-      expect(@created_order.id > 0).to eq true
-      expect(@created_order.keychain_id > 0).to eq true
-      expect(@created_order.last_keychain_id > 0).to eq true
+      expect(@created_order.amount_paid_in_btc).to eq 0
+      expect(@created_order.amount_paid_in_btc).to be_kind_of BigDecimal
+      expect(@created_order.amount_to_pay_in_btc).to be > 0
+      expect(@created_order.amount_to_pay_in_btc).to be_kind_of BigDecimal
+      expect(@created_order.id).to be > 0
+      expect(@created_order.keychain_id).to be > 0
+      expect(@created_order.last_keychain_id).to be > 0
       expect(@created_order.payment_id.to_s).not_to be_empty
       expect(@created_order.status).to eq 0
       expect(@created_order.tid).to eq nil
+      expect(@created_order.transaction_ids).to eq []
 
       # orders.create never sets these fields
       expect(@created_order.callback_data).to eq nil
@@ -57,7 +62,7 @@ RSpec.describe StraightServerKit::OrderResource do
       end
       expect(@error).to be_instance_of StraightServerKit::ApiError
       expect(@error.status).to eq 409
-      expect(@error.message).to eq "Invalid order: amount cannot be nil and should be more than 0"
+      expect(@error.message).to eq "Invalid order: amount cannot be nil or less than 0"
     end
   end
 

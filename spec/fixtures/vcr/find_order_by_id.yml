@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://gear.loc/gateways/a55c73f90728ea2750c0d92151e14f960a4cee1e3bca0cf2da8312573a98a8c5/orders/5
+    uri: https://gateway.gear.mycelium.com/gateways/73da14f2677eab39fa6e18076f777fde6af5a3f126062419160152b1a2f3ec60/orders/128690
     body:
       encoding: US-ASCII
       string: ''
@@ -10,11 +10,11 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v0.12.1
       X-Nonce:
-      - '1435134015332155129856'
+      - '1499258633053386571776'
       X-Signature:
-      - ayhOtW3Si64mB5FMtnK4o6NTPqFIq/FeIQYbiv7s15b6EwSs+1GdqZoKDkaAFLbNyPcxHfyUcnQa7qSc/IMGlw==
+      - 2g2UZsDUOETUPKUXglHZWSnDvH03WcFBpStrq/avIMUgZjimmI5j05U1E09FZ2TL8SkF+9YHcPC3Z7erDC3r9w==
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,16 +25,20 @@ http_interactions:
       message: OK
     headers:
       Server:
-      - nginx/1.9.1
+      - nginx/1.8.0
       Date:
-      - Wed, 24 Jun 2015 08:20:15 GMT
+      - Wed, 05 Jul 2017 12:43:53 GMT
+      Content-Type:
+      - application/json
       Content-Length:
-      - '264'
+      - '323'
       Connection:
       - keep-alive
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
     body:
       encoding: UTF-8
-      string: '{"status":0,"amount":398740,"address":"1Q8gGSuqyQk2rZeLKiPJz2nrSieTn3VrTy","tid":null,"id":5,"payment_id":"9eff7da15d0fb91ac5bd690fb2a5f7b465aa7fdfbe747028dd1579c8a9b36dba","amount_in_btc":"0.0039874","amount_paid_in_btc":"0.","keychain_id":1,"last_keychain_id":1}'
+      string: '{"status":0,"amount":1,"address":"muXWST6kBJUoufhs41fYmsprsXugyxcybD","tid":null,"transaction_ids":[],"id":128690,"payment_id":"0715a28702298669d4ba87acd2f8c4e045faa671ada675b472ead71d548ba0c0","amount_in_btc":"0.00000001","amount_paid_in_btc":"0.0","amount_to_pay_in_btc":"0.00000001","keychain_id":1,"last_keychain_id":1}'
     http_version: 
-  recorded_at: Wed, 24 Jun 2015 08:20:15 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Wed, 05 Jul 2017 12:43:53 GMT
+recorded_with: VCR 3.0.3

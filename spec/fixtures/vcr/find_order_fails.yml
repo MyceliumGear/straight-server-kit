@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://gear.loc/gateways/a55c73f90728ea2750c0d92151e14f960a4cee1e3bca0cf2da8312573a98a8c5/orders/meah
+    uri: https://gateway.gear.mycelium.com/gateways/73da14f2677eab39fa6e18076f777fde6af5a3f126062419160152b1a2f3ec60/orders/meah
     body:
       encoding: US-ASCII
       string: ''
@@ -10,11 +10,11 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v0.12.1
       X-Nonce:
-      - '1435134015890302697472'
+      - '1499258633546682073088'
       X-Signature:
-      - b42hKPlUp5/+IjnqBVX+BOGQ1Kbl6QlqJkqUCwZYyx7LuFMxg9TrxcnizXJckoZBdX9LEySgJ1BWxCYFU4pOhw==
+      - 6rZdcR45MEQnQf567EEZJMS2Sj94EQ3TeKo+8OmoTwW9OoPBxXTKfpPTffQ8Hgx43Gb1QaFkvyxHMydvXsjYEw==
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,17 +25,17 @@ http_interactions:
       message: Not Found
     headers:
       Server:
-      - nginx/1.9.1
+      - nginx/1.8.0
       Date:
-      - Wed, 24 Jun 2015 08:20:15 GMT
+      - Wed, 05 Jul 2017 12:43:53 GMT
       Content-Length:
       - '100'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: GET /gateways/a55c73f90728ea2750c0d92151e14f960a4cee1e3bca0cf2da8312573a98a8c5/orders/meah
+      string: GET /gateways/73da14f2677eab39fa6e18076f777fde6af5a3f126062419160152b1a2f3ec60/orders/meah
         Not found
     http_version: 
-  recorded_at: Wed, 24 Jun 2015 08:20:15 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Wed, 05 Jul 2017 12:43:53 GMT
+recorded_with: VCR 3.0.3

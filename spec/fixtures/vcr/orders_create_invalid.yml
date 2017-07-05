@@ -2,19 +2,19 @@
 http_interactions:
 - request:
     method: post
-    uri: http://gear.loc/gateways/a55c73f90728ea2750c0d92151e14f960a4cee1e3bca0cf2da8312573a98a8c5/orders
+    uri: https://gateway.gear.mycelium.com/gateways/73da14f2677eab39fa6e18076f777fde6af5a3f126062419160152b1a2f3ec60/orders
     body:
       encoding: UTF-8
-      string: '{"amount":null,"callback_data":"123","keychain_id":1}'
+      string: '{"callback_data":"123","keychain_id":1}'
     headers:
       Content-Type:
       - application/json
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v0.12.1
       X-Nonce:
-      - '1435134015292253143040'
+      - '1499258632835900899328'
       X-Signature:
-      - 38R+VK1z2/HZzusiR0L9850nvIACu5grh3HpNiExW+2BJ3toe33r4YilV4X2jGN1RCWWv6h/rQZlu2FgEuoG4Q==
+      - BI2Bd+0zUBciOM1a+zPWZw07COtdIo3m3lsCmNGq3gIX541rFZ3+9ohGnEviuvAUAf19hVJiD1iiT9eJ2UPNGA==
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,16 +25,16 @@ http_interactions:
       message: Conflict
     headers:
       Server:
-      - nginx/1.9.1
+      - nginx/1.8.0
       Date:
-      - Wed, 24 Jun 2015 08:20:15 GMT
+      - Wed, 05 Jul 2017 12:43:53 GMT
       Content-Length:
-      - '61'
+      - '50'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: 'Invalid order: amount cannot be nil and should be more than 0'
+      string: 'Invalid order: amount cannot be nil or less than 0'
     http_version: 
-  recorded_at: Wed, 24 Jun 2015 08:20:15 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Wed, 05 Jul 2017 12:43:53 GMT
+recorded_with: VCR 3.0.3

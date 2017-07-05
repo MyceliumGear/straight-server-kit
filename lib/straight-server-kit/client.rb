@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'faraday'
 
 module StraightServerKit
   class Client
 
-    DEFAULT_API_URL = 'http://localhost:9000'.freeze
+    DEFAULT_API_URL = 'https://gateway.gear.mycelium.com'
 
     attr_reader :url, :resources, :gateway_id, :secret
 

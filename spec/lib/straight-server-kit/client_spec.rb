@@ -13,14 +13,16 @@ RSpec.describe StraightServerKit::Client do
   end
 
   it "can be initializes with an url" do
-    @client = StraightServerKit::Client.new(url: 'http://gear.loc', **default_params)
-    expect(@client.url).to eq 'http://gear.loc'
+    expect(described_class::DEFAULT_API_URL).to eq 'https://gateway.gear.mycelium.com'
+    expect(subject.url).to eq described_class::DEFAULT_API_URL
+
+    client = StraightServerKit::Client.new(url: 'http://example.com', **default_params)
+    expect(client.url).to eq 'http://example.com'
   end
 
   it "constructs pay url" do
-    @order = StraightServerKit::Order.new(payment_id: 'abc')
-    expect(subject.pay_url(@order)).to eq 'http://localhost:9000/pay/abc'
-    expect(described_class.new(url: 'https://gear.loc', **default_params).pay_url(@order)).to eq 'https://gear.loc/pay/abc'
+    order = StraightServerKit::Order.new(payment_id: 'abc')
+    expect(subject.pay_url(order)).to eq(described_class::DEFAULT_API_URL + '/pay/abc')
   end
 
   it "does respond to valid resources" do
